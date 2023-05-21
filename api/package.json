@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "socket.io": "^4.6.1"
+  },
+  "name": "bugschatroomserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}
