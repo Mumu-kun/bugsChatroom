@@ -2,6 +2,8 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 
 const http = createServer();
+const PORT = process.env.PORT || 8080;
+console.log(PORT);
 
 const io = new Server(http, {
 	cors: { origin: "*" },
@@ -24,9 +26,10 @@ io.on("connection", (socket) => {
 
 	socket.on("message", (message) => {
 		const string = `${users[socket.id]} said \t\t\t ${message}`;
+		console.log(string);
 		messages.push(string);
 		io.emit("message", string);
 	});
 });
 
-http.listen(8080, () => console.log("listening on port 8080"));
+http.listen(PORT, () => console.log("listening on port 8080"));
