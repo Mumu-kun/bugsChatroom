@@ -8,8 +8,8 @@ const io = new Server(http, {
 	cors: { origin: "*" },
 });
 
-console.log(JSON.stringify(http));
-console.log(JSON.stringify(io));
+console.log(http);
+console.log(io);
 
 let users = {};
 let messages = [];
