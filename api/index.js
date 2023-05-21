@@ -1,11 +1,9 @@
-export default function handler(request, response) {
-	const { name = "World" } = request.query;
-	return response.send(`Hello ${name}!`);
-}
+import { createServer } from "http";
+import { Server } from "socket.io";
 
-const http = require("http").createServer();
+const http = createServer();
 
-const io = require("socket.io")(http, {
+const io = new Server(http, {
 	cors: { origin: "*" },
 });
 

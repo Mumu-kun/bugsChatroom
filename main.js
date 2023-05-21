@@ -1,4 +1,4 @@
-const socket = io("ws://localhost:8080", {
+const socket = io("", {
 	autoConnect: false,
 });
 
@@ -25,6 +25,7 @@ socket.on("connect", () => {
 
 btn.onclick = () => {
 	if (!socket.connected) {
+		socket.io.uri = `ws://localhost:${port.value || 8080}`;
 		socket.connect();
 		return;
 	}
