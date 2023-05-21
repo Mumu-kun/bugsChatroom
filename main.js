@@ -25,7 +25,7 @@ socket.on("connect", () => {
 
 btn.onclick = () => {
 	if (!socket.connected) {
-		socket.io.uri = `ws://localhost:${port.value || 8080}`;
+		socket.io.uri = `ws://bugschatroomserver.onrender.com`;
 		socket.connect();
 		return;
 	}
