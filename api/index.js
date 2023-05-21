@@ -3,11 +3,13 @@ import { Server } from "socket.io";
 
 const http = createServer();
 const PORT = process.env.PORT || 8080;
-console.log(PORT);
 
 const io = new Server(http, {
 	cors: { origin: "*" },
 });
+
+console.log(JSON.stringify(http));
+console.log(JSON.stringify(io));
 
 let users = {};
 let messages = [];
@@ -32,4 +34,4 @@ io.on("connection", (socket) => {
 	});
 });
 
-http.listen(PORT, () => console.log("listening on port 8080"));
+http.listen(PORT, () => console.log(`listening on port ${PORT}`));
