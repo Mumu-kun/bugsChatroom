@@ -1,3 +1,8 @@
+export default function handler(request, response) {
+	const { name = "World" } = request.query;
+	return response.send(`Hello ${name}!`);
+}
+
 const http = require("http").createServer();
 
 const io = require("socket.io")(http, {
